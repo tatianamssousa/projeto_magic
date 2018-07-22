@@ -13,7 +13,7 @@ class CartaController extends Controller
      */
     public function index()
     {
-        //teste
+        //
     }
 
     /**
