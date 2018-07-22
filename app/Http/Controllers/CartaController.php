@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carta;
 use Illuminate\Http\Request;
 
 class CartaController extends Controller
@@ -13,7 +14,8 @@ class CartaController extends Controller
      */
     public function index()
     {
-        //
+        $cartas = Carta::all();
+        return view('cartas.index')->with('cartas', $cartas);
     }
 
     /**
@@ -23,7 +25,7 @@ class CartaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cartas.form');
     }
 
     /**
@@ -34,7 +36,15 @@ class CartaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carta = new Carta();
+        $carta->nome = $request->get('nome');
+        $carta->custo = $request->get('custo');
+        $carta->texto = $request->get('texto');
+        $carta->flavor = $request->get('flavor');
+        $carta->thougness = $request->get('thoughness');
+        $carta->power = $request->get('power');
+        $carta->lealdade = $request->get('lealdade');
+        $carta->save();
     }
 
     /**

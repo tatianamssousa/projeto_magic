@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 Route::resource('/usuarios', 'UsuarioController');
 Route::resource('/usuario-cartas','UsuarioCartaController');
-Route::resouce('/cartas', 'CartaController');
+Route::resource('/cartas', 'CartaController');
