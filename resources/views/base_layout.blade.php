@@ -33,5 +33,6 @@
 {{--<div id="div3" class="teste">div3 teste</div>--}}
 {{--<div id="div4" class="teste2">div4 teste2</div>--}}
 {{--<div id="div5" class="teste teste2">div5 teste2</div>--}}
+@yield('rodape')
 </body>
 </html>

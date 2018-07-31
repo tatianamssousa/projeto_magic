@@ -1,7 +1,7 @@
 @extends('base_layout')
 @section('title', 'cartas index')
 @section('body')
-    @foreach($cartas as $carta);
+    @foreach($cartas as $carta)
         Nome: {{$carta->nome}}<br>
         Custo: {{$carta->custo}}<br>
         Texto: {{$carta->texto}}<br>

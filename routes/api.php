@@ -23,5 +23,29 @@ Route::name('api.')->group(function ($route){
     $route->resource('/usuario-cartas', 'UsuarioCartaController');
 });
 Route::name('api.')->group(function ($route){
-    $route->resource('/cartas', 'CartasController');
+    $route->resource('/cartas', 'CartaController');
+});
+Route::name('api.')->group(function($route){
+    $route->resource('/raridades', 'RaridadeController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/edicoes', 'EdicaoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/ilustradores', 'IlustradorController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/tipos', 'TipoCntroller');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/supertipos', 'SupertipoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/subtipos', 'SubtipoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/linguas', 'LinguaController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/estados', 'EstadoController');
 });

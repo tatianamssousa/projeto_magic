@@ -55,7 +55,7 @@ class UsuarioCartaController extends Controller
     {
         $usuario_carta = new Usuario_Carta();
         $usuario_carta->carta_id = $request->get('carta');
-        $usuario_carta->edicao_id = $request->get('edicao');
+        $usuario_carta->edicao_id = $request->get('edicoes');
         $usuario_carta->usuario_id = $request->get('usuario');
         $usuario_carta->posse = $request->get('posse');
         $usuario_carta->estado_id = $request->get('estado');
