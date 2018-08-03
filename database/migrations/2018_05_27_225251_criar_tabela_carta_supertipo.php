@@ -20,12 +20,12 @@ class CriarTabelaCartaSupertipo extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreign('carta_id', 'carta_supertipo_fk_carta')
-//                ->references('id')
-//                ->on('cartas');
-//            $table->foreign('supertipo_id','carta_supertipo_fk_supertipo')
-//                ->references('id')
-//                ->on('supertipos');
+            $table->foreign('carta_id', 'carta_supertipo_fk_carta')
+                ->references('id')
+                ->on('cartas');
+            $table->foreign('supertipo_id','carta_supertipo_fk_supertipo')
+                ->references('id')
+                ->on('supertipos');
         });
     }
 

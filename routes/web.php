@@ -25,3 +25,8 @@ Route::resource('/supertipos', 'SupertipoController');
 Route::resource('/subtipos', 'SubtipoController');
 Route::resource('/linguas', 'LinguaController');
 Route::resource('/estados', 'EstadoController');
+Route::resource('/nomes', 'NomeController');
+Route::resource('/carta-tipos', 'CartaTipoController');
+Route::resource('/carta-supertipos', 'CartaSupertipoController');
+Route::resource('/carta-subtipos', 'CartaSubtipoController');
+Route::resource('/carta-edicoes', 'CartaEdicaoController');

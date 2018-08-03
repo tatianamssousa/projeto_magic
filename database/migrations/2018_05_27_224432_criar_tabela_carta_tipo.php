@@ -20,12 +20,12 @@ class CriarTabelaCartaTipo extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreign('carta_id','carta_tipo_fk_carta')
-//                ->references('id')
-//                ->on('cartas');
-//            $table->foreign('tipo_id', 'carta_tipo_fk_tipo')
-//                ->references('id')
-//                ->on('tipos');
+            $table->foreign('carta_id','carta_tipo_fk_carta')
+                ->references('id')
+                ->on('cartas');
+            $table->foreign('tipo_id', 'carta_tipo_fk_tipo')
+                ->references('id')
+               ->on('tipos');
         });
     }
 

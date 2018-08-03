@@ -13,7 +13,7 @@ class CriarTabelaCartaEdicao extends Migration
      */
     public function up()
     {
-        Schema::create('cartas_edicoes', function (Blueprint $table) {
+        Schema::create('carta_edicoes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('carta_id')->unsigned();
             $table->integer('ilustrador_id')->unsigned();
@@ -22,15 +22,15 @@ class CriarTabelaCartaEdicao extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreign('carta_id', 'carta_edicao_fk_carta')
-//                ->references('id')
-//                ->on('cartas');
-//            $table->foreign('ilustrador_id','carta_edicao_fk_ilustrador')
-//                ->references('id')
-//                ->on('ilustradores');
-//            $table->foreign('edicao_id','carta_edicao_fk_edicao')
-//                ->references('id')
-//                ->on('edicoes');
+            $table->foreign('carta_id', 'carta_edicao_fk_carta')
+                ->references('id')
+                ->on('cartas');
+            $table->foreign('ilustrador_id','carta_edicao_fk_ilustrador')
+                ->references('id')
+                ->on('ilustradores');
+            $table->foreign('edicao_id','carta_edicao_fk_edicao')
+                ->references('id')
+                ->on('edicoes');
         });
     }
 
@@ -41,11 +41,11 @@ class CriarTabelaCartaEdicao extends Migration
      */
     public function down()
     {
-        Schema::table('cartas_edicoes',function (Blueprint $table) {
+        Schema::table('carta_edicoes',function (Blueprint $table) {
             $table->dropForeign('carta_edicao_fk_carta');
             $table->dropForeign('carta_edicao_fk_ilustrador');
             $table->dropForeign('carta_edicao_fk_edicao');
         });
-        Schema::dropIfExists('cartas_edicoes');
+        Schema::dropIfExists('carta_edicoes');
     }
 }

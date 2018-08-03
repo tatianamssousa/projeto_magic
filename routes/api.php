@@ -49,3 +49,18 @@ Route::name('api.')->group(function ($route){
 Route::name('api.')->group(function ($route){
     $route->resource('/estados', 'EstadoController');
 });
+Route::name('api.')->group(function ($route){
+    $route->resource('/nomes', 'NomeController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/carta-tipos', 'CartaTipoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/carta-supertipos', 'CartaSupertipoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/carta-subtipos', 'CartaSubtipoController');
+});
+Route::name('api.')->group(function ($route){
+    $route->resource('/carta-edicoes', 'CartaEdicaoController');
+});

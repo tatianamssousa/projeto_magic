@@ -21,12 +21,12 @@ class CriarTabelaNome extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreign('carta_id','nome_fk_carta')
-//                ->references('id')
-//                ->on('cartas');
-//            $table->foreign('lingua_id', 'nome_fk_lingua')
-//                ->references('id')
-//                ->on('linguas');
+            $table->foreign('carta_id','nome_fk_carta')
+                ->references('id')
+                ->on('cartas');
+            $table->foreign('lingua_id', 'nome_fk_lingua')
+                ->references('id')
+               ->on('linguas');
         });
     }
 

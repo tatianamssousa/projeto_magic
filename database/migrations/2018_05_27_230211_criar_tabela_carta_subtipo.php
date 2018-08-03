@@ -20,12 +20,12 @@ class CriarTabelaCartaSubtipo extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreign('carta_id','carta_subtipo_fk_carta')
-//                ->references('id')
-//                ->on('cartas');
-//            $table->foreign('subtipo_id', 'carta_subtipo_fk_subtipo')
-//                ->references('id')
-//                ->on('subtipos');
+            $table->foreign('carta_id','carta_subtipo_fk_carta')
+                ->references('id')
+                ->on('cartas');
+            $table->foreign('subtipo_id', 'carta_subtipo_fk_subtipo')
+                ->references('id')
+                ->on('subtipos');
         });
     }
 
