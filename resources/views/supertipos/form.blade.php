@@ -1,17 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('base_layout')
+@section('title', 'formulario supertipo')
+@section('body')
     <form method="post" action="{{route('supertipos.store')}}">
         {{csrf_field()}}
-        Nome:<input type="text" name="nome" id="nome"><br><br>
+        Nome:<input type="text" name="nome" id="nome" class="obrigatorio"><br><br>
             <input type="submit" value="Enviar">
     </form>
-</body>
-</html>
+@endsection
+@section('rodape')
+    <script>
+        function verificarCampos() {
+            console.log('enviar');
+
+            mostrarEnviar();
+            $('.obrigatorio').each(function () {
+                if (!$(this).val()){
+                    esconderEnviar();
+                }
+            })
+        }
+        function mostrarEnviar() {
+            $('#enviar').show();
+        }
+        function esconderEnviar() {
+            $('#enviar').hide();
+        }
+        verificarCampos();
+        $('.obrigatorio').on('keyup', function () {
+            verificarCampos();
+        })
+    </script>
+@endsection
