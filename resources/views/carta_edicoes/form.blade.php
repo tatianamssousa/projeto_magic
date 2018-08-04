@@ -4,7 +4,7 @@
     <form method="post" action="{{route('carta-edicoes.store')}}">
         {{csrf_field()}}
         Carta:
-        <select name="carta" id="carta">
+        <select name="carta" id="carta" class="obrigatorio">
             @foreach($cartas as $carta)
                 <option value="{{$carta->id}}">{{$carta->nome}}</option>
             @endforeach
